@@ -1,6 +1,6 @@
 %% Imperialist Competitive Algorithm (CCA);
-
-close all
+tic
+%close all
 clc; clear
 load data
 %% Problem Statement
@@ -30,7 +30,7 @@ ProblemParams.NPar = 34;                           % Number of optimization vari
 AlgorithmParams.NumOfCountries = 200;               % Number of initial countries.
 AlgorithmParams.NumOfInitialImperialists = 8;      % Number of Initial Imperialists.
 AlgorithmParams.NumOfAllColonies = AlgorithmParams.NumOfCountries - AlgorithmParams.NumOfInitialImperialists;
-AlgorithmParams.NumOfDecades = 3000;
+AlgorithmParams.NumOfDecades = 1000;
 AlgorithmParams.RevolutionRate = 0.3;               % Revolution is the process in which the socio-political characteristics of a country change suddenly.
 AlgorithmParams.AssimilationCoefficient = 2;        % In the original paper assimilation coefficient is shown by "beta".
 AlgorithmParams.AssimilationAngleCoefficient = .5;  % In the original paper assimilation angle coefficient is shown by "gama".
@@ -49,7 +49,7 @@ if DisplayParams.PlotEmpires
     DisplayParams.EmpiresAxisHandle = axes;
 end
 
-DisplayParams.PlotCost = true;    % "true" to plot. "false"
+DisplayParams.PlotCost = false;    % "true" to plot. "false"
 if DisplayParams.PlotCost
     DisplayParams.CostFigureHandle = figure('Name','Plot of Minimum and Mean Costs','NumberTitle','off');
     DisplayParams.CostAxisHandle = axes; 
@@ -151,3 +151,4 @@ for Decade = 1:AlgorithmParams.NumOfDecades
     
 end % End of Algorithm
 MinimumCost(end)
+toc

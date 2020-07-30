@@ -15,7 +15,9 @@ function Empires=ImperialisticCompetition(Empires)
     
     nn = numel(Empires(WeakestEmpireInd).ColoniesCost);
     jj = myrandint(nn,1,1);
-    
+    WeakestEmpireInd
+    nn
+    jj
     Empires(SelectedEmpireInd).ColoniesPosition = [Empires(SelectedEmpireInd).ColoniesPosition
                                                    Empires(WeakestEmpireInd).ColoniesPosition(jj,:)];
                                                
